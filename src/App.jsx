@@ -1,5 +1,5 @@
 import { HomePage } from './pages/home/HomePage';
-import { OrderPage } from './pages/OrderPage';
+import { OrderPage } from './pages/orders/OrderPage';
 import { TrackingPage } from './pages/TrackingPage';
 import { CheckoutPage } from './pages/checkout/CheckoutPage';
 import { Routes, Route } from 'react-router'
@@ -12,10 +12,11 @@ function App() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/cart-items?expand=product')
-      .then((response) => {
+    const fetchAppData = async () => {
+      const response = await axios.get('/api/cart-items?expand=product')
         setCart(response.data)
-    });
+    }
+    fetchAppData();
   }, []);
   
   return (
