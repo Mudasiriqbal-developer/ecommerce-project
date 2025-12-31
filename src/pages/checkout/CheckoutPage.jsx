@@ -1,13 +1,13 @@
 import axios from "axios";
 import dayjs from "dayjs";
-import { useState, useEffect } from "react";
-import { CheckoutHeader } from "./CheckoutHeader";
-import { formatMoney } from "../utils/money";
 import "./CheckoutPage.css";
+import { useState, useEffect } from "react";
+import { formatMoney } from "../utils/money";
+import { CheckoutHeader } from "./CheckoutHeader";
 
 export function CheckoutPage({ cart }) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
-  const [paymentSummary, setPymentSummary] = useState(null);
+  const [paymentSummary, setPaymentSummary] = useState(null);
 
   useEffect(() => {
     axios
@@ -17,7 +17,7 @@ export function CheckoutPage({ cart }) {
       });
 
     axios.get("/api/payment-summary").then((response) => {
-      setPymentSummary(response.data);
+      setPaymentSummary(response.data);
     });
   }, []);
   return (
