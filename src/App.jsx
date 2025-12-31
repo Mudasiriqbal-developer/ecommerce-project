@@ -1,4 +1,4 @@
-import { HomePage } from './pages/HomePage';
+import { HomePage } from './pages/home/HomePage';
 import { OrderPage } from './pages/OrderPage';
 import { TrackingPage } from './pages/TrackingPage';
 import { CheckoutPage } from './pages/checkout/CheckoutPage';
@@ -7,7 +7,6 @@ import { NotFoundPage } from './pages/NotFoundPage';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css'
-
 
 function App() {
   const [cart, setCart] = useState([]);

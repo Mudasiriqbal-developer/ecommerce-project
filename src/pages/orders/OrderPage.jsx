@@ -5,7 +5,6 @@ import { formatMoney } from "./utils/money";
 import { Header } from "../components/Header";
 import { useState, useEffect, Fragment } from "react";
 import BuyAgainIcon from "../assets/images/icons/buy-again.png";
-import PropTypes from "prop-types"; // Add this import
 
 export function OrderPage({ cart }) {
   const [orders, setOrders] = useState([]);
@@ -173,22 +172,3 @@ export function OrderPage({ cart }) {
     </>
   );
 }
-
-// Add PropTypes validation
-OrderPage.propTypes = {
-  cart: PropTypes.arrayOf(
-    PropTypes.shape({
-      // Define your cart item structure here
-      productId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      product: PropTypes.shape({
-        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-        name: PropTypes.string,
-        priceCents: PropTypes.number,
-      }),
-      quantity: PropTypes.number,
-    })
-  ).isRequired,
-};
-
-export default OrderPage;
-
