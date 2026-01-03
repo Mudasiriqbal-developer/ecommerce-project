@@ -41,6 +41,7 @@ export function CheckoutPage({ cart, laodCart }) {
 
           <PaymentSummary 
             paymentSummary={paymentSummary} 
+            laodCart={laodCart}
           />
 
         </div>
