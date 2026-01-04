@@ -2,12 +2,12 @@ import { formatMoney } from "../utils/money";
 import { useNavigate } from "react-router";
 import axios from "axios";
 
-export function PaymentSummary({paymentSummary, laodCart}) {
+export function PaymentSummary({paymentSummary, loadCart}) {
   const navigate = useNavigate();
   // Function to place your order.
   const createOrder = async () => {
     await axios.post(`/api/orders`);
-    await laodCart();
+    await loadCart();
     navigate('/orders')
   };
 

@@ -2,7 +2,7 @@ import { formatMoney } from "../utils/money";
 import axios from "axios";
 import dayjs from "dayjs";
 
-export function DeliveryOptions({cartItem, deliveryOptions, laodCart}) {
+export function DeliveryOptions({cartItem, deliveryOptions, loadCart}) {
   return (
     <div className="delivery-options">
       <div className="delivery-options-title">Choose a delivery option:</div>
@@ -18,7 +18,7 @@ export function DeliveryOptions({cartItem, deliveryOptions, laodCart}) {
          await axios.put(`/api/cart-items/${cartItem.productId}`, {
           deliveryOptionId: deliveryOption.id
          });
-         await laodCart();
+         await loadCart();
         };
  
         return (

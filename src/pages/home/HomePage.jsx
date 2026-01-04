@@ -8,7 +8,7 @@ import axios from 'axios';
 
 import "./HomePage.css";
 
-export function HomePage({cart, laodCart}) {
+export function HomePage({cart, loadCart}) {
   const [products, setProducts] = useState([]);
   const [searchParams] = useSearchParams();
   const search = searchParams.get('search');
@@ -31,7 +31,7 @@ export function HomePage({cart, laodCart}) {
       <Header cart={cart}/>
 
       <div className="home-page">
-        <ProductsGrid products={products} laodCart={laodCart} />
+        <ProductsGrid products={products} loadCart={loadCart} />
       </div>
     </>
   );

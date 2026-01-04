@@ -1,6 +1,6 @@
 import { Product } from "./Product";
 
-export function ProductsGrid({ products, laodCart }) {
+export function ProductsGrid({ products, loadCart }) {
 
   return (
     <div className="products-grid">
@@ -10,7 +10,7 @@ export function ProductsGrid({ products, laodCart }) {
           <Product 
             key={product.id} 
             product={product} 
-            laodCart={laodCart} 
+            loadCart={loadCart} 
           />
         );
       })}

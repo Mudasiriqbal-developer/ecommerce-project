@@ -3,7 +3,7 @@ import { useState } from "react";
 import { DeliveryOptions } from "./DeliveryOptions";
 import { CartItemDetails } from "./CartItemDetails";
 
-export function OrderSummary({ cart, deliveryOptions, laodCart }) {
+export function OrderSummary({ cart, deliveryOptions, loadCart }) {
 
   return (
     <div className="order-summary">
@@ -27,13 +27,13 @@ export function OrderSummary({ cart, deliveryOptions, laodCart }) {
               <div className="cart-item-details-grid">
                 <CartItemDetails 
                   cartItem={cartItem} 
-                  laodCart={laodCart} 
+                  loadCart={loadCart} 
                 />
 
                 <DeliveryOptions
                   cartItem={cartItem}
                   deliveryOptions={deliveryOptions}
-                  laodCart={laodCart}
+                  loadCart={loadCart}
                 />
               </div>
             </div>

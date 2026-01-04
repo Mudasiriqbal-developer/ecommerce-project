@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { PaymentSummary } from "./PaymentSummary";
 import { CheckoutHeader } from "./CheckoutHeader";
 
-export function CheckoutPage({ cart, laodCart }) {
+export function CheckoutPage({ cart, loadCart }) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState(null);
 
@@ -45,12 +45,12 @@ export function CheckoutPage({ cart, laodCart }) {
           <OrderSummary 
             cart={cart} 
             deliveryOptions={deliveryOptions} 
-            laodCart={laodCart}
+            loadCart={loadCart}
           />
 
           <PaymentSummary 
             paymentSummary={paymentSummary} 
-            laodCart={laodCart}
+            loadCart={loadCart}
           />
 
         </div>

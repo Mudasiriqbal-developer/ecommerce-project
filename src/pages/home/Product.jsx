@@ -3,7 +3,7 @@ import { useState } from "react";
 import { formatMoney } from "../utils/money";
 import CheckmarkIcon from "../../assets/images/icons/checkmark.png";
 
-export function Product({ product, laodCart }) {
+export function Product({ product, loadCart }) {
   const [quantity, setQuantity] = useState(1);
   const [showAddedMessage, setShowAddedMessage] = useState(false);
 
@@ -12,7 +12,7 @@ export function Product({ product, laodCart }) {
       productId: product.id,
       quantity,
     });
-    await laodCart();
+    await loadCart();
 
     setShowAddedMessage(true);
 
@@ -74,3 +74,4 @@ export function Product({ product, laodCart }) {
     </div>
   );
 }
+export default Product
