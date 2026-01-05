@@ -15,5 +15,9 @@ it('Display Zeros 0', () => {
   expect(formatMoney(0)).toBe('$0.00');
 });
 
+it('Display Negative numbers', () => {
+  expect(formatMoney(-100)).toBe('-$1.00');
+});
+
 })
 
