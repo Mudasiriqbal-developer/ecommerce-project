@@ -4,8 +4,6 @@ import { ProductsGrid } from './productGrid';
 import {useEffect, useState} from "react";
 import axios from 'axios';
 
-
-
 import "./HomePage.css";
 
 export function HomePage({cart, loadCart}) {
